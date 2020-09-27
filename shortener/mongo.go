@@ -34,7 +34,22 @@ func (s *MongoService) Get(slug string) (*Link, error) {
 	return nil, errors.New("not implemented")
 }
 
-// Delete a link
-func (s *MongoService) Delete(slug string) error {
-	return errors.New("not implemented")
+// Activate a link
+func (s *MongoService) Activate(slug string) error {
+	return nil
+}
+
+// Deactivate a link
+func (s *MongoService) Deactivate(slug string) error {
+	return nil
+}
+
+// Hit the link
+func (s *MongoService) Hit(slug string) error {
+	return nil
+}
+
+// Reset link stats
+func (s *MongoService) Reset(slug string) error {
+	return nil
 }

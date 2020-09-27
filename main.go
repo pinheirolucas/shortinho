@@ -121,6 +121,7 @@ func init() {
 	pflag.String("database-uri", "", "the URI where the database is hosted")
 	pflag.String("log-level", "debug", "set the application log level (default is debug)")
 	pflag.Bool("no-log-colors", false, "disable log colors")
+	pflag.Int("slug-size", 4, "slug size for generated URL's (default and minimum is 4)")
 	pflag.StringVarP(&cfgFile, "config", "c", "", "config file (default is $HOME/.tagsrv.yaml)")
 
 	pflag.Parse()
@@ -132,6 +133,7 @@ func init() {
 	viper.BindPFlag("log.disable-colors", pflag.Lookup("no-log-colors"))
 	viper.BindPFlag("database.engine", pflag.Lookup("database-engine"))
 	viper.BindPFlag("database.uri", pflag.Lookup("database-uri"))
+	viper.BindPFlag("app.slug-size", pflag.Lookup("slug-size"))
 
 	if cfgFile != "" {
 		viper.SetConfigFile(cfgFile)

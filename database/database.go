@@ -56,6 +56,7 @@ func connectMongo(uri string) (CloseFunc, error) {
 		return nil, err
 	}
 
+	connectedEngine = EngineMongo
 	mongoClient = client
 	return func() error {
 		if err := client.Disconnect(context.Background()); err != nil {
@@ -76,6 +77,7 @@ func connectPostgres(uri string) (CloseFunc, error) {
 		return nil, err
 	}
 
+	connectedEngine = EnginePostgres
 	postgresConnection = db
 	return db.Close, nil
 }
