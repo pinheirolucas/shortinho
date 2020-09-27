@@ -21,6 +21,8 @@ type Link struct {
 	Hits      int    `json:"hits,omitempty"`
 	MaxHits   int    `json:"maxHits,omitempty"`
 	Active    bool   `json:"active,omitempty"`
+	CreatedAt int    `json:"createdAt,omitempty"`
+	UpdatedAt int    `json:"updatedAt,omitempty"`
 }
 
 // Service for managing links
